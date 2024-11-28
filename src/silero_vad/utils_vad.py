@@ -23,7 +23,7 @@ class OnnxWrapper():
             self.session = onnxruntime.InferenceSession(path, sess_options=opts)
 
         self.reset_states()
-        if '16k' in path:
+        if '16k' in str(path):
             warnings.warn('This model support only 16000 sampling rate!')
             self.sample_rates = [16000]
         else:
